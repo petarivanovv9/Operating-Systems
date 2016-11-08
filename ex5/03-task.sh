@@ -14,3 +14,12 @@ do
     rm temp
   fi
 done
+
+### Example
+# $ ./03-task.sh petar-ivanov asan                                                 130 ↵
+# Enter a message:>
+# hello my friend
+#
+# Message from petar-ivanov@petar-ivanov on pts/24 at 21:19 ...
+# hello my friend
+# EOF
