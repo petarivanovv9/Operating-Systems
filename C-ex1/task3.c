@@ -1,5 +1,4 @@
 // Реализирайте команда wc, с един аргумент подаден като входен параметър
-// По-долу е предоставен вариант на решение на задачата без проверки (във възможно най-опростен вариант)
 
 #include <fcntl.h>
 #include <stdlib.h>
@@ -10,7 +9,17 @@ main(int argc, char* argv[]) {
   char c;
   int lines=0, words=0, chars=0;
 
+  if (argc != 2) {
+    write(2, "Wrong number of arguments!\n", 27);
+    exit(1);
+  }
+
   fd1 = open(argv[1], O_RDONLY);
+
+  if (fd1 == -1) {
+    write(2, "Operation open failed!", 27);
+    exit(1);
+  }
 
   while( read(fd1, &c, 1) ) {
     if (c == '\n') {
